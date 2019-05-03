@@ -1,0 +1,27 @@
+using System;
+using System.Linq;
+class Program
+{
+
+    private static void Main(string[] args)
+    {
+        int n = Convert.ToInt32(Console.ReadLine());
+        int[] a = new int[n + 1];
+
+        string s1 = Console.ReadLine(); //3 2 7
+        s1 = "0"+ s1 + " 0";
+        a = s1.Split(' ').Select(p => Convert.ToInt32(p)).ToArray();
+        int q = Convert.ToInt32(Console.ReadLine()); //2
+        while (q != 0)
+        {
+            q--;
+            string s = Console.ReadLine();// 1 2
+            int x = Convert.ToInt32(s.Split(' ')[0]);
+            int y = Convert.ToInt32(s.Split(' ')[1]);
+            if ((a[x-1] % 2 == 1) || ((a[x] == 0) && (x != y)))
+                Console.WriteLine("Odd");
+            else
+                Console.WriteLine("Even");
+        }
+    }
+}
