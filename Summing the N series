@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+   int t;
+    scanf("%d",&t);
+        for(int i=0;i<t;i++)
+        {
+            unsigned long long n;
+            scanf("%lld",&n);
+            //if(n>=1 && n<=10000000000000000)
+            //{
+             unsigned long long tvalue=1000000000+7;
+             unsigned long long j=1;
+            j=n % tvalue;
+            unsigned long long k=n % tvalue;
+           k=j*k;
+           j=k%tvalue;
+            printf("%lld\n",j);
+            //}
+            //Console.WriteLine("\n");
+        }
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */    
+    return 0;
+}
