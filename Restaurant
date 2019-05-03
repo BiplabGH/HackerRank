@@ -1,0 +1,24 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+//using Linq;
+
+class Solution {
+    static void Main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution */
+        int t= Convert.ToInt32(Console.ReadLine());
+        for(int i=0;i<t;i++)
+        {
+            string s= Console.ReadLine();
+            int a = Convert.ToInt32(s.Split(' ')[0]);
+            int b = Convert.ToInt32(s.Split(' ')[1]);
+            //int[] a1=s.Split(' ').Select(p => Convert.ToInt32(p)).ToArray();
+            int gd=gcd(a,b);
+            Console.WriteLine((a/gd) * (b/gd));
+        }
+    }
+    static int gcd(int a, int b)
+    {
+        return b == 0 ? a : gcd(b, a % b);
+    }
+}
