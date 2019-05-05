@@ -1,4 +1,4 @@
 Learning
 ========
 
-Learning of new techs
+Hacker rank problems
