@@ -1,0 +1,33 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Numerics;
+class Solution
+{
+
+    static void Main(String[] args)
+    {
+        int y = Convert.ToInt32(Console.ReadLine());
+        
+        long idx = 0;
+        for (int i = 0; i < y; i++)
+        {
+            long n = Convert.ToInt64(Console.ReadLine());
+            bool b = IsFib(n, out idx);
+            Console.WriteLine(b ? "IsFibo" : "IsNotFibo");
+        }
+        Console.Read();
+    }
+    static bool IsFib(long T, out long idx)
+    {
+        double root5 = Math.Sqrt(5);
+        double phi = (1 + root5) / 2;
+
+        idx = (long)Math.Floor(Math.Log(T * root5) / Math.Log(phi) + 0.5);
+        long u = (long)Math.Floor(Math.Pow(phi, idx) / root5 + 0.5);
+
+        return (u == T);
+    }
+
+}
